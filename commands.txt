@@ -1,0 +1,27 @@
+SQLite Commands
+
+sqlite3 Command to open up the sqlite3 program in the Command Prompt.
+
+sqlite3 shelter.db Command to open up the sqlite3 program and directly open up the following database file. You can substitute shelter.db for any other existing database file.
+
+.open shelter.db Command inside the sqlite program to open a database file. In this case we are opening the shelter.db file. You can substitute any other existing .db file for shelter.db
+
+.help Command to pint out a list of available commands
+
+.quit Command to quit the sqlite application
+
+Terminal Commands
+
+Windows Specific
+
+echo %cd% echo asks the computer to print to the screen. In this case, we ask the computer to print the "current directory" (e.g. the directory we are currently working in) using %cd%.
+
+cd Display the current drive and directory. Doe the same as above.
+
+Mac Specific
+
+pwd This shorthand stands for "present working directory". It does the same as the Windows command above to print which we directory we are currently working in to the screen.
+
+sqlite3 Command to open up the sqlite3 program in the Terminal.
+
+cd On a Mac, this command means change directory rather than current directory
