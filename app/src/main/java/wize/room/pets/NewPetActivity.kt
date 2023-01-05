@@ -7,17 +7,17 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import wize.room.pets.databinding.ActivityNewPetBinding
 
 class NewPetActivity : AppCompatActivity() {
     private lateinit var editPetView: EditText
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_pet)
-        editPetView = findViewById(R.id.edit_pet)
+        val binding = ActivityNewPetBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val button = findViewById<Button>(R.id.button_save)
-        button.setOnClickListener {
+        binding.buttonSave.setOnClickListener {
             val replyIntent = Intent()
             if (TextUtils.isEmpty(editPetView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)

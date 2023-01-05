@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import wize.room.pets.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,12 +22,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+
         val adapter = PetListAdapter()
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        binding.recyclerview.adapter = adapter
+        binding.recyclerview.layoutManager = LinearLayoutManager(this)
 
         petViewModel.allPets.observe(this) { words ->
             // Update the cached copy of the words in the adapter.
